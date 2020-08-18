@@ -198,7 +198,6 @@ export default {
                 utils.bus.$emit('editor/contextmenu/open', data)
             })
             _t.editor.on('editor:record', function (from) {
-                console.log('editor:record from', from)
                 // 更新操作日志
                 _t.$store.commit('editor/log/update', {
                     action: 'record',
@@ -273,7 +272,6 @@ export default {
         _edgeMousedown(event) {
             let _t = this
             _t.doClearAllStates()
-            console.log('_edgeMousedown', event)
             if (event.item && !event.item.destroyed) {
                 _t.editor.setItemState(event.item, 'active', !event.item.hasState('active'))
             }
@@ -812,7 +810,7 @@ export default {
 
         utils.bus.$on('editor/add/node', _t.doAddNode)
         utils.bus.$on('editor/tool/trigger', _t.handleToolTrigger)
-        utils.bus.$on('editor/currentItem/update', function(data) {console.log('data',data)
+        utils.bus.$on('editor/currentItem/update', function(data) {
             _t.editor.emit('editor:setItem', data)
         })
     },

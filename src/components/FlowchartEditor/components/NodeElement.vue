@@ -67,7 +67,7 @@
     },
     methods: {
       handleMouseDown (event) {
-        // let _t = this
+        let _t = this
         utils.bus.$emit('editor/add/node', _t.info)
       }
     }

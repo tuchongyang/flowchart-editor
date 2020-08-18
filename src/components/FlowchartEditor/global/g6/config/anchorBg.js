@@ -1,5 +1,4 @@
 /**
- * Created by OXOYO on 2019/7/8.
  *
  * 锚点背景配置
  */
